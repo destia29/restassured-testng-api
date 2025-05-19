@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "ab018df5-1a2a-4a49-88d7-e064607b5eb5",
+		"name": "task_selenium",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18187500"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test_destia-1@gmail.com\",\r\n    \"full_name\": \"Destia Latifah A\",\r\n    \"password\": \"@dmin123\",\r\n    \"department\": \"Technology\",\r\n    \"phone_number\": \"082281609857\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test_destia@gmail.com\",\r\n    \"password\": \"@dmin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetListAllObjects",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/objects",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"objects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListOfObjectsByIds",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/objectslistId?id=41",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"objectslistId"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "41"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleObject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/8749129e-f5f7-4ae6-9b03-93be7252443c/api/objects/41",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"8749129e-f5f7-4ae6-9b03-93be7252443c",
+						"api",
+						"objects",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddObject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Add object Destia\",\r\n    \"data\": {\r\n        \"year\": 2019,\r\n        \"price\": 1849.99,\r\n        \"cpu_model\": \"Intel Core i9\",\r\n        \"hard_disk_size\": \"1 TB\",\r\n        \"capacity\": \"2 cpu\",\r\n        \"screen_size\": \"14 Inch\",\r\n        \"color\": \"red\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/objects",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"objects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateObject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Edit part 2 by destia\",\r\n    \"data\": {\r\n        \"year\": 2019,\r\n        \"price\": 1849.99,\r\n        \"cpu_model\": \"Intel Core i9\",\r\n        \"hard_disk_size\": \"1 TB\",\r\n        \"capacity\": \"2 cpu\",\r\n        \"screen_size\": \"14 Inch\",\r\n        \"color\": \"red\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/37777abe-a5ef-4570-a383-c99b5f5f7906/api/objects/41",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"37777abe-a5ef-4570-a383-c99b5f5f7906",
+						"api",
+						"objects",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteObject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/d79a30ed-1066-48b6-83f5-556120afc46f/api/objects/39",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"d79a30ed-1066-48b6-83f5-556120afc46f",
+						"api",
+						"objects",
+						"39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllDepartment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/department",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartiallyUpdateObject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3IiwiaWF0IjoxNzQ3NTc3NzI1fQ.dZV75dUPJwfcB7gF9deSXAJD-zQeYw_lJgSINVjePe8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Edit by destia - test partiallupdate\",\r\n    \"year\": \"2030\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/39a0f904-b0f2-4428-80a3-391cea5d7d04/api/object/41",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"39a0f904-b0f2-4428-80a3-391cea5d7d04",
+						"api",
+						"object",
+						"41"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
