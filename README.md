@@ -11,6 +11,18 @@ This project contains automated API tests for the Whitesmokehouse API using:
 
 ---
 
+## 🏗️ How to Create the Project (if starting from scratch)
+
+Use the command below to generate a new Maven project using the `maven-archetype-quickstart`.
+
+### ✅ Windows (PowerShell / CMD):
+
+```bash
+mvn "-DgroupId=com.api.automation" "-DartifactId=restassured-testng-project" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false" archetype:generate
+```
+
+---
+
 ## 📁 Project Structure
 
 ```
