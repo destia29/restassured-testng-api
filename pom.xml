@@ -16,6 +16,13 @@
     <scope>test</scope>
   </dependency>
   
+  <!-- Jackson Dependencies -->
+  <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.17.1</version> <!-- Or latest stable version -->
+  </dependency>
+
   <!-- TestNG -->
   <dependency>
     <groupId>org.testng</groupId>
