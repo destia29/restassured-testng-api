@@ -28,10 +28,10 @@ public class RegisterEmployeeTest {
 
         email = "testuser_" + randomString + "@mail.com";
         password = "securePassword123!";
-        fullName = "Destia Test POJO";
+        fullName = "Destia NEW Test POJO";
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "registration")
     public void registerEmployee() {
         // 1. Prepare POJO
         EmployeeRequest newEmployee = new EmployeeRequest();
@@ -58,7 +58,7 @@ public class RegisterEmployeeTest {
 
     }
 
-    @Test(priority = 2, dependsOnMethods = "registerEmployee")
+    @Test(priority = 2, dependsOnGroups = "registration")
     public void loginEmployee() {
         // 1. Prepare request body
         EmployeeRequest loginRequest = new EmployeeRequest();

@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Employee Test Suite">
+    <test name="Employee CRUD Tests">
+    <packages>
+        <package name="com.api.automation.e2e">
+        <groups>
+            <run>
+                <include name="registration"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.automation.e2e.LoginEmployeeTest"/>
+            <class name="com.api.automation.e2e.UpdateEmployeeTest"/>
+        </classes>
+        </package>
+    </packages>
+    </test>
+</suite>
