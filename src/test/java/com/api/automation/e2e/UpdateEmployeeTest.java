@@ -9,11 +9,11 @@ import static org.hamcrest.Matchers.*;
 
 public class UpdateEmployeeTest {
     private static final String BASE_URL = "https://whitesmokehouse.com";
-
     @Test
     public void updateEmployee() {
         // 1. Prepare updated data
         EmployeeRequest updateData = new EmployeeRequest();
+        String id = "527"; // Assuming this is the employee ID to update
         updateData.setEmail("baruedit_EDITBARU@mail.com");
         updateData.setPassword("newSecurePassword123!");
         updateData.setFull_name("Destia Latifah A EDIT");
